@@ -13,7 +13,7 @@ def on_click(x, y, button, pressed):
         mouse_x, mouse_y = x, y
         save_coor.append(mouse_x)
         save_coor.append(mouse_y)
-        return False 
+        return False   
 
 def get_mouse_position():
     with mouse.Listener(on_click=on_click) as listener:
@@ -27,10 +27,9 @@ def capture_screen_region_pyautogui(x, y, width, height):
  
 def pre_process(_imgCrop):
     gray_frame = cv2.cvtColor(_imgCrop, cv2.COLOR_BGR2GRAY)
-    _, binary_frame = cv2.threshold(gray_frame, 127, 255, cv2.THRESH_BINARY_INV)
-    canny_frame = cv2.Canny(binary_frame, 50, 50)
+    _, binary_frame = cv2.threshold(gray_frame, 100, 255, cv2.THRESH_BINARY_INV)
     kernel = np.ones((5, 5))
-    dilated_frame = cv2.dilate(canny_frame, kernel, iterations=2)
+    dilated_frame = cv2.dilate(binary_frame, kernel, iterations=2)
     
     return dilated_frame
  
@@ -48,7 +47,7 @@ def find_obstacles(_imgCrop, _imgPre):
     
     return imgContours, conFound
  
-def game_logic(conFound, _imgContours, jump_distance=35):
+def game_logic(conFound, _imgContours, jump_distance=40):
     if conFound:
         left_most_contour = min(conFound, key=lambda cnt: cv2.boundingRect(cnt)[0])
         x, y, w, h = cv2.boundingRect(left_most_contour)
