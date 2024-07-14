@@ -49,7 +49,7 @@ def capture_screen_region_pyautogui(x, y, width, height):
 ### 🔥Step 4🔥
 Pre-Processing the cropped image + find the target object (need avoid object)
 You can't do the pre-processing. Just directly find the contours in the cropped image, but there is a lot of noise in it.
-Also you have to using **find_the_best_threshold.py** to find the optimize threshold.
+Also you have to using [find_the_best_threshold.py](https://github.com/TCK2001/DINO_GAME_AUTO_PLAY/blob/main/find_the_best_threshold.py) to find the optimize threshold.
 ```python
 def pre_process(_imgCrop):
     gray_frame = cv2.cvtColor(_imgCrop, cv2.COLOR_BGR2GRAY)
