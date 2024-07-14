@@ -1,4 +1,4 @@
-# DINO_GAME_CV2
+# DINO_GAME_AUTO_MODE
 ## DEMO Video
 ![dino_res](https://github.com/user-attachments/assets/0822cc19-ee4f-4376-b44a-25d170fadc75)
 
