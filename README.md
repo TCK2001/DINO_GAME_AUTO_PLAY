@@ -46,7 +46,7 @@ def capture_screen_region_pyautogui(x, y, width, height):
     return img
 ```
 
-## 🔥Step 4🔥
+### 🔥Step 4🔥
 Pre-Processing the cropped image + find the target object (need avoid object)
 You can't do the pre-processing. Just directly find the contours in the cropped image, but there is a lot of noise in it.
 Also you have to using **find_the_best_threshold.py** to find the optimize threshold.
@@ -75,7 +75,7 @@ def find_obstacles(_imgCrop, _imgPre):
     return imgContours, conFound
 ```
 
-## 🔥Step 5🔥
+### 🔥Step 5🔥
 Finally, you need to know the distance at which the dino has to jump.
 ( A recommended jump distance of 35 to 50 is the best. )
 ```python
